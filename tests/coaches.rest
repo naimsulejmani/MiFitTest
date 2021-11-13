@@ -1,0 +1,23 @@
+@url = localhost
+@port = 3000
+
+@route = api/coaches
+
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiQ2xpZW50IiwiSWQiOjEsIlBlcnNvbklkIjoxLCJVc2VybmFtZSI6Im5haW1zdWxlam1hbmkiLCJFbWFpbCI6Im5haW0uc3VsZWptYW5pQGdtYWlsLmNvbSIsIk5hbWUiOiJOYWltIiwiU3VybmFtZSI6IlN1bGVqbWFuaSIsIlBhc3N3b3JkIjoiJDJiJDEwJGhlZGRWSFZGcGFrZ0gzcThsc0FSSXVlUUwuVVZ5RUEwaThZVWxEOXMvNjNTa3QvcmxmT2htIiwiaWF0IjoxNjM2Nzc0OTA0LCJleHAiOjE2MzY3NzY3MDR9.WlCalnZCaNkqBOa4ErZjThIH5dzEJpD4nTnImvCnZ3Y
+
+### Get Session for a coaches
+GET http://{{url}}:{{port}}/{{route}}/1/sessions HTTP/1.1
+Authorization: Bearer {{token}}
+
+
+
+###confirm session
+PATCH http://{{url}}:{{port}}/{{route}}/1/sessions/1/confirmation HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "trainingSessionId": 4,
+    "coachId": 1,
+    "approved": true
+}

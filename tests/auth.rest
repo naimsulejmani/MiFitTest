@@ -1,0 +1,25 @@
+@url = localhost
+@port = 3000
+
+@route = api/auth
+
+
+@refreshToken
+
+### Login
+POST http://{{url}}:{{port}}/{{route}}/token HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"naimsulejmani",
+    "password":"naimsulejmani"
+}
+
+### refresh access token
+
+POST http://{{url}}:{{port}}/{{route}}/accesstoken HTTP/1.1
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiQ2xpZW50IiwiSWQiOjEsIlBlcnNvbklkIjoxLCJVc2VybmFtZSI6Im5haW1zdWxlam1hbmkiLCJFbWFpbCI6Im5haW0uc3VsZWptYW5pQGdtYWlsLmNvbSIsIk5hbWUiOiJOYWltIiwiU3VybmFtZSI6IlN1bGVqbWFuaSIsIlBhc3N3b3JkIjoiJDJiJDEwJGhlZGRWSFZGcGFrZ0gzcThsc0FSSXVlUUwuVVZ5RUEwaThZVWxEOXMvNjNTa3QvcmxmT2htIiwiaWF0IjoxNjM2Nzc1MjI0LCJleHAiOjE2NTY2NjE2MjR9.pRKmEQlRAZos6a-gFRzzaWtMrelJ1Auf55dfIaOhHe0"
+}

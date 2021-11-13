@@ -1,0 +1,33 @@
+@url = localhost
+@port = 3000
+
+@route = api/clients
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJUeXBlIjoiQ2xpZW50IiwiSWQiOjEsIlBlcnNvbklkIjoxLCJVc2VybmFtZSI6Im5haW1zdWxlam1hbmkiLCJFbWFpbCI6Im5haW0uc3VsZWptYW5pQGdtYWlsLmNvbSIsIk5hbWUiOiJOYWltIiwiU3VybmFtZSI6IlN1bGVqbWFuaSIsIlBhc3N3b3JkIjoiJDJiJDEwJGhlZGRWSFZGcGFrZ0gzcThsc0FSSXVlUUwuVVZ5RUEwaThZVWxEOXMvNjNTa3QvcmxmT2htIiwiaWF0IjoxNjM2Nzc0OTA0LCJleHAiOjE2MzY3NzY3MDR9.WlCalnZCaNkqBOa4ErZjThIH5dzEJpD4nTnImvCnZ3Y
+
+###confirm session
+POST http://{{url}}:{{port}}/{{route}}/1/sessions HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+        "coachId": 1,
+        "clientId": 1,
+        "sessionDate": "2021-11-25",
+        "sessionNo":3,
+        "startTime":"19:00"
+}
+
+
+
+
+###pay session
+PATCH http://{{url}}:{{port}}/{{route}}/1/sessions HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+        "paySlipId": 1,
+        "clientId": 1,
+        "trainingSessionId":"4",
+        "amount": 150
+}
